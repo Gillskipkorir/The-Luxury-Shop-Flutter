@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:the_luxury_shop/design_course/design_course_app_theme.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
+import 'package:the_luxury_shop/fitness_app/material_app_theme.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class AdminMaterialInfoScreen extends StatefulWidget {

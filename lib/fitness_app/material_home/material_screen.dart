@@ -86,7 +86,8 @@ class SelectedMaterial extends StatelessWidget {
                       )
                     : Container(
                         padding: const EdgeInsets.all(4),
-                        child: GridView.builder(
+                        child:
+                        GridView.builder(
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount: snapshot.data?.docs.length,

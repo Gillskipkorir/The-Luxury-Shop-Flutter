@@ -9,18 +9,21 @@ import 'package:the_luxury_shop/fitness_app/material_app_theme.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class MaterialInfoScreen extends StatefulWidget {
+class FavouriteMaterialScreen extends StatefulWidget {
   final String imageUrl;
   final String materialname;
 
-  const MaterialInfoScreen(
-      {required this.imageUrl, required this.materialname});
+  const FavouriteMaterialScreen({
+    required this.imageUrl,
+    required this.materialname,
+  });
 
   @override
-  _MaterialInfoScreenState createState() => _MaterialInfoScreenState();
+  _FavouriteMaterialScreenState createState() =>
+      _FavouriteMaterialScreenState();
 }
 
-class _MaterialInfoScreenState extends State<MaterialInfoScreen>
+class _FavouriteMaterialScreenState extends State<FavouriteMaterialScreen>
     with TickerProviderStateMixin {
   final double infoHeight = 364.0;
   late AnimationController animationController;
@@ -192,31 +195,20 @@ class _MaterialInfoScreenState extends State<MaterialInfoScreen>
                                 SizedBox(
                                   width: 50,
                                   height: 50,
-                                  child: InkWell(
-                                    onTap: () async {
-                                      await DatabaseHelper.instance.add(
-                                        Materials(
-
-                                            name: widget.materialname,
-                                            imageUrl: widget.imageUrl
-                                        ),
-                                      );
-                                    },
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: FitnessAppTheme.yellow,
-                                        borderRadius: const BorderRadius.all(
-                                          Radius.circular(16.0),
-                                        ),
-                                        border: Border.all(
-                                            color: FitnessAppTheme.yellow
-                                                .withOpacity(0.9)),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: FitnessAppTheme.yellow,
+                                      borderRadius: const BorderRadius.all(
+                                        Radius.circular(16.0),
                                       ),
-                                      child: const Icon(
-                                        Icons.favorite_border_outlined,
-                                        color: DesignCourseAppTheme.nearlyWhite,
-                                        size: 28,
-                                      ),
+                                      border: Border.all(
+                                          color: FitnessAppTheme.yellow
+                                              .withOpacity(0.9)),
+                                    ),
+                                    child: const Icon(
+                                      Icons.favorite,
+                                      color: DesignCourseAppTheme.nearlyWhite,
+                                      size: 28,
                                     ),
                                   ),
                                 ),

@@ -9,7 +9,6 @@ import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
 import 'favourites_list.dart';
 
 class FavouritesScreen extends StatelessWidget {
-
   const FavouritesScreen({Key? key}) : super(key: key);
 
   @override
@@ -74,7 +73,6 @@ class FavouritesScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15.0),
-
           const Flexible(child: FavouriteList())
         ],
       ),

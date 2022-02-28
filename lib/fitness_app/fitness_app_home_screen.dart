@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:the_luxury_shop/fitness_app/material_home/main_favourites_screen.dart';
-import 'package:the_luxury_shop/fitness_app/profile/profile_screen.dart';
 
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fintness_app_theme.dart';

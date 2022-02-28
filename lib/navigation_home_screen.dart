@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_luxury_shop/about_us.dart';
+import 'package:the_luxury_shop/stores_home_screen.dart';
 
 import 'app_theme.dart';
 import 'custom_drawer/drawer_user_controller.dart';
@@ -7,7 +8,6 @@ import 'custom_drawer/home_drawer.dart';
 import 'feedback_screen.dart';
 import 'fitness_app/fitness_app_home_screen.dart';
 import 'help_screen.dart';
-import 'hotel_booking/hotel_home_screen.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
   const NavigationHomeScreen({Key? key}) : super(key: key);

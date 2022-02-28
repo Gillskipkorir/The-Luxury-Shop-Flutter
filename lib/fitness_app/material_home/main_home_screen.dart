@@ -62,7 +62,7 @@ class _MainHomeScreenState extends State<MainHomeScreen>
   void addAllListData() {
     const int count = 5;
     listViews.add(
-      RunningView(
+      TopMenuView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
             curve: const Interval((1 / count) * 3, 1.0,
