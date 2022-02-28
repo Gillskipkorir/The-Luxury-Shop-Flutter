@@ -161,7 +161,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
             height: 1,
             color: AppTheme.grey.withOpacity(0.9),
           ),
-          Column(
+         /* Column(
             children: <Widget>[
               ListTile(
                 title: const Text(
@@ -190,7 +190,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 height: MediaQuery.of(context).padding.bottom,
               )
             ],
-          ),
+          ),*/
         ],
       ),
     );

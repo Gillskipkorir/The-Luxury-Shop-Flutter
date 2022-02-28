@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_luxury_shop/hotel_booking/hotel_home_screen.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../../about_us.dart';
 import '../fintness_app_theme.dart';
 
 class MaterialTopView extends StatelessWidget {

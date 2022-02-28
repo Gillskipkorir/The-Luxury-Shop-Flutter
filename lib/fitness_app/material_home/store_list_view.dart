@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/store_list_data.dart';
 
-import 'hotel_app_theme.dart';
-import 'model/hotel_list_data.dart';
 
-class HotelListView extends StatelessWidget {
-  const HotelListView(
+class StoreListView extends StatelessWidget {
+  const StoreListView(
       {Key? key,
       required this.hotelData,
       required this.animationController,
@@ -62,8 +61,6 @@ class HotelListView extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              color: HotelAppTheme.buildLightTheme()
-                                  .backgroundColor,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -98,7 +95,7 @@ class HotelListView extends StatelessWidget {
                                             height: 3,
                                           ),
                                           Text(
-                                            hotelData.subTxt1,
+                                            hotelData.titleTxt,
                                             textAlign: TextAlign.left,
                                             style: const TextStyle(
                                               fontWeight: FontWeight.w300,
@@ -109,7 +106,7 @@ class HotelListView extends StatelessWidget {
                                             height: 3,
                                           ),
                                           Text(
-                                            hotelData.subTxt2,
+                                            hotelData.subTxt,
                                             textAlign: TextAlign.left,
                                             style: const TextStyle(
                                               fontWeight: FontWeight.w300,
@@ -126,8 +123,7 @@ class HotelListView extends StatelessWidget {
                                             size: 26,
                                             color: FitnessAppTheme.yellow,
                                             borderColor:
-                                                HotelAppTheme.buildLightTheme()
-                                                    .primaryColor,
+                                                FitnessAppTheme.yellow,
                                           ),
                                         ],
                                       ),

@@ -4,7 +4,7 @@ import 'package:the_luxury_shop/fitness_app/ui_view/home_ui/other_products_list.
 import 'package:the_luxury_shop/fitness_app/ui_view/home_ui/other_varieties_list.dart';
 import 'package:the_luxury_shop/fitness_app/ui_view/home_ui/super_wax_list.dart';
 import 'package:the_luxury_shop/fitness_app/ui_view/home_ui/wax_hollandais_list.dart';
-import 'package:the_luxury_shop/fitness_app/ui_view/running_view.dart';
+import 'package:the_luxury_shop/fitness_app/ui_view/home_ui/top_menu_view.dart';
 
 import '../fintness_app_theme.dart';
 

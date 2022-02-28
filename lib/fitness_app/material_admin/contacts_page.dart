@@ -4,8 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:the_luxury_shop/auth/screens/login_screen.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
-import 'package:the_luxury_shop/hotel_booking/hotel_app_theme.dart';
-import 'package:the_luxury_shop/hotel_booking/model/hotel_list_data.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/default_app_theme.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/store_list_data.dart';
 
 class AdminContactUsPage extends StatefulWidget {
   const AdminContactUsPage({Key? key}) : super(key: key);
@@ -51,7 +51,7 @@ class _AdminContactUsPageState extends State<AdminContactUsPage>
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: HotelAppTheme.buildLightTheme(),
+      data: DefaultAppTheme.buildLightTheme(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text("The Luxury Shop"),

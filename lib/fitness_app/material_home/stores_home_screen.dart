@@ -1,17 +1,16 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/default_app_theme.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/store_list_data.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/store_list_view.dart';
 
-import 'calendar_popup_view.dart';
-import 'filters_screen.dart';
-import 'hotel_app_theme.dart';
-import 'hotel_list_view.dart';
-import 'model/hotel_list_data.dart';
 
 class OurStoresScreen extends StatefulWidget {
+  const OurStoresScreen({Key? key}) : super(key: key);
+
   @override
   _OurStoresScreenState createState() => _OurStoresScreenState();
 }
@@ -46,7 +45,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: HotelAppTheme.buildLightTheme(),
+      data: DefaultAppTheme.buildLightTheme(),
       child: Container(
         child: Scaffold(
           appBar: AppBar(
@@ -90,7 +89,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
                         },
                         body: Container(
                           color:
-                              HotelAppTheme.buildLightTheme().backgroundColor,
+                              DefaultAppTheme.buildLightTheme().backgroundColor,
                           child: ListView.builder(
                             itemCount: hotelList.length,
                             padding: const EdgeInsets.only(top: 8),
@@ -106,7 +105,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
                                               (1 / count) * index, 1.0,
                                               curve: Curves.fastOutSlowIn)));
                               animationController.forward();
-                              return HotelListView(
+                              return StoreListView(
                                 callback: () {},
                                 hotelData: hotelList[index],
                                 animation: animation,
@@ -130,7 +129,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
   Widget getListUI() {
     return Container(
       decoration: BoxDecoration(
-        color: HotelAppTheme.buildLightTheme().backgroundColor,
+        color: DefaultAppTheme.buildLightTheme().backgroundColor,
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.grey.withOpacity(0.2),
@@ -162,7 +161,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
                                       curve: Curves.fastOutSlowIn)));
                       animationController.forward();
 
-                      return HotelListView(
+                      return StoreListView(
                         callback: () {},
                         hotelData: hotelList[index],
                         animation: animation,
@@ -191,7 +190,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
         ),
       );
       hotelListViews.add(
-        HotelListView(
+        StoreListView(
           callback: () {},
           hotelData: hotelList[i],
           animation: animation,
@@ -215,7 +214,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
               padding: const EdgeInsets.only(right: 16, top: 8, bottom: 8),
               child: Container(
                 decoration: BoxDecoration(
-                  color: HotelAppTheme.buildLightTheme().backgroundColor,
+                  color: DefaultAppTheme.buildLightTheme().backgroundColor,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(38.0),
                   ),
@@ -234,7 +233,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
                     style: const TextStyle(
                       fontSize: 18,
                     ),
-                    cursorColor: HotelAppTheme.buildLightTheme().primaryColor,
+                    cursorColor: DefaultAppTheme.buildLightTheme().primaryColor,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'London...',
@@ -246,7 +245,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
           ),
           Container(
             decoration: BoxDecoration(
-              color: HotelAppTheme.buildLightTheme().primaryColor,
+              color: DefaultAppTheme.buildLightTheme().primaryColor,
               borderRadius: const BorderRadius.all(
                 Radius.circular(38.0),
               ),
@@ -270,7 +269,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
                   padding: const EdgeInsets.all(16.0),
                   child: Icon(FontAwesomeIcons.search,
                       size: 20,
-                      color: HotelAppTheme.buildLightTheme().backgroundColor),
+                      color: DefaultAppTheme.buildLightTheme().backgroundColor),
                 ),
               ),
             ),
@@ -290,7 +289,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
           child: Container(
             height: 24,
             decoration: BoxDecoration(
-              color: HotelAppTheme.buildLightTheme().backgroundColor,
+              color: DefaultAppTheme.buildLightTheme().backgroundColor,
               boxShadow: <BoxShadow>[
                 BoxShadow(
                     color: Colors.grey.withOpacity(0.2),
@@ -301,7 +300,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
           ),
         ),
         Container(
-          color: HotelAppTheme.buildLightTheme().backgroundColor,
+          color: DefaultAppTheme.buildLightTheme().backgroundColor,
           child: Padding(
             padding:
                 const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 4),
@@ -329,8 +328,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
                     borderRadius: const BorderRadius.all(
                       Radius.circular(4.0),
                     ),
-                    onTap: () {
-                    },
+                    onTap: () {},
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: Row(
@@ -344,8 +342,8 @@ class _OurStoresScreenState extends State<OurStoresScreen>
                           ),
                           Padding(
                             padding: EdgeInsets.all(8.0),
-                            child: Icon(Icons.sort,
-                                color: FitnessAppTheme.yellow),
+                            child:
+                                Icon(Icons.sort, color: FitnessAppTheme.yellow),
                           ),
                         ],
                       ),
@@ -368,27 +366,6 @@ class _OurStoresScreenState extends State<OurStoresScreen>
     );
   }
 
-  void showDemoDialog({context}) {
-    showDialog<dynamic>(
-      context: context,
-      builder: (BuildContext context) => CalendarPopupView(
-        barrierDismissible: true,
-        minimumDate: DateTime.now(),
-        //  maximumDate: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 10),
-        initialEndDate: endDate,
-        initialStartDate: startDate,
-        onApplyClick: (DateTime startData, DateTime endData) {
-          setState(() {
-            if (startData != null && endData != null) {
-              startDate = startData;
-              endDate = endData;
-            }
-          });
-        },
-        onCancelClick: () {},
-      ),
-    );
-  }
 
   Widget getAppBarUI() {
     return Container(

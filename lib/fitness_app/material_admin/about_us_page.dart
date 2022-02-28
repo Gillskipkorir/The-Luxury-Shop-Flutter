@@ -1,11 +1,8 @@
 import 'dart:ui';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:the_luxury_shop/auth/screens/login_screen.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
-import 'package:the_luxury_shop/hotel_booking/hotel_app_theme.dart';
-import 'package:the_luxury_shop/hotel_booking/model/hotel_list_data.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/default_app_theme.dart';
 
 class AdminAboutUsPage extends StatefulWidget {
   const AdminAboutUsPage({Key? key}) : super(key: key);
@@ -17,41 +14,11 @@ class AdminAboutUsPage extends StatefulWidget {
 class _AdminAboutUsPageState extends State<AdminAboutUsPage>
     with TickerProviderStateMixin {
   // the logout function
-  Future<void> logout(BuildContext context) async {
-    await FirebaseAuth.instance.signOut();
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const LoginScreenn()));
-  }
-
-  late AnimationController animationController;
-  List<HotelListData> hotelList = HotelListData.hotelList;
-  final ScrollController _scrollController = ScrollController();
-
-  DateTime startDate = DateTime.now();
-  DateTime endDate = DateTime.now().add(const Duration(days: 5));
-
-  @override
-  void initState() {
-    animationController = AnimationController(
-        duration: const Duration(milliseconds: 1000), vsync: this);
-    super.initState();
-  }
-
-  Future<bool> getData() async {
-    await Future<dynamic>.delayed(const Duration(milliseconds: 200));
-    return true;
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: HotelAppTheme.buildLightTheme(),
+      data: DefaultAppTheme.buildLightTheme(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text("The Luxury Shop"),

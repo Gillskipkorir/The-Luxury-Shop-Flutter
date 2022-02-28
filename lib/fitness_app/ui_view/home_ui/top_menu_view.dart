@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:the_luxury_shop/stores_home_screen.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/stores_home_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../about_us.dart';
-import '../fintness_app_theme.dart';
+import '../../../about_us.dart';
+import '../../fintness_app_theme.dart';
 
 class TopMenuView extends StatelessWidget {
   final AnimationController animationController;
@@ -161,7 +161,7 @@ class TopMenuView extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                OurStoresScreen()),
+                                                const OurStoresScreen()),
                                       );
                                     },
                                     child: const CircleAvatar(

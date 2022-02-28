@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:the_luxury_shop/main.dart';
 
-import '../main.dart';
 
-class HotelAppTheme {
+class DefaultAppTheme {
   static TextTheme _buildTextTheme(TextTheme base) {
     const String fontName = 'WorkSans';
     return base.copyWith(
