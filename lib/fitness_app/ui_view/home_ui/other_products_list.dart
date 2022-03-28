@@ -56,7 +56,6 @@ class OtherProducts extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 26.0
                       ) ,),
-
                     const SizedBox(
                       height: 10,
                     ),
@@ -218,6 +217,11 @@ class OtherProducts extends StatelessWidget {
                         ),
                       ],
                     ),
+
+                    const SizedBox(
+                      height: 50,
+                    ),
+
                   ],
                 ),
               ),

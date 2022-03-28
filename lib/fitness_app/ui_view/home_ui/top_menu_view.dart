@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_luxury_shop/fitness_app/material_home/stores_home_screen.dart';
+import 'package:the_luxury_shop/stores/stores_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../about_us.dart';
@@ -28,7 +28,7 @@ class TopMenuView extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(bottom: 10),
                   decoration: BoxDecoration(
-                    color: FitnessAppTheme.yellow,
+                    color: Colors.yellow[9000],
                     borderRadius: const BorderRadius.only(
                         bottomRight: Radius.circular(40.0),
                         bottomLeft: Radius.circular(40.0)),
@@ -161,7 +161,7 @@ class TopMenuView extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const OurStoresScreen()),
+                                                StoresScreen()),
                                       );
                                     },
                                     child: const CircleAvatar(

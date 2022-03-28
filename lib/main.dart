@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:the_luxury_shop/splash_screen.dart';
 
 import 'app_theme.dart';
-import 'fitness_app/material_admin/admin_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

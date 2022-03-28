@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:the_luxury_shop/about_us.dart';
-import 'package:the_luxury_shop/fitness_app/material_home/stores_home_screen.dart';
 
 import 'app_theme.dart';
 import 'custom_drawer/drawer_user_controller.dart';
 import 'custom_drawer/home_drawer.dart';
 import 'fitness_app/fitness_app_home_screen.dart';
+import 'stores/stores_screen.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
   const NavigationHomeScreen({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   @override
   void initState() {
     drawerIndex = DrawerIndex.HOME;
-    screenView = FitnessAppHomeScreen();
+    screenView = const FitnessAppHomeScreen();
     super.initState();
   }
 
@@ -39,10 +39,8 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
             drawerWidth: MediaQuery.of(context).size.width * 0.75,
             onDrawerCall: (DrawerIndex drawerIndexdata) {
               changeIndex(drawerIndexdata);
-              //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
             },
             screenView: screenView,
-            //we replace screen view as we need on navigate starting screens like MyHomePage, HelpScreen, FeedbackScreen, etc...
           ),
         ),
       ),
@@ -58,7 +56,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         });
       } else if (drawerIndex == DrawerIndex.Store) {
         setState(() {
-          screenView = const OurStoresScreen();
+          screenView =  StoresScreen();
         });
       } else if (drawerIndex == DrawerIndex.About) {
         setState(() {

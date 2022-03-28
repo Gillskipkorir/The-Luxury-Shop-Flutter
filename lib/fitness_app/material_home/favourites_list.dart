@@ -1,12 +1,12 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
 import 'package:the_luxury_shop/fitness_app/material_home/selected_favourite_image.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class FavouriteList extends StatefulWidget {
   const FavouriteList({Key? key}) : super(key: key);
@@ -83,7 +83,8 @@ class _FavouriteListState extends State<FavouriteList> {
                                             setState(() {
                                               var xyz = grocery.id;
                                               if (xyz != null) {
-                                                DatabaseHelper.instance.remove(xyz);
+                                                DatabaseHelper.instance
+                                                    .remove(xyz);
                                               }
                                               //DatabaseHelper.instance.remove(grocery.id ?? 1);
                                             });
@@ -101,17 +102,16 @@ class _FavouriteListState extends State<FavouriteList> {
                                 Expanded(
                                   flex: 3,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: FadeInImage.memoryNetwork(
-                                      fit: BoxFit.cover,
-                                      height: 200,
-                                      width: 160,
-                                      fadeInDuration:
-                                          const Duration(milliseconds: 70),
-                                      placeholder: kTransparentImage,
-                                      image: grocery.imageUrl,
-                                    ),
-                                  ),
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: CachedNetworkImage(
+                                        fit: BoxFit.cover,
+                                        height: 200,
+                                        placeholder: (context, url) =>
+                                            const CircularProgressIndicator(),
+                                        errorWidget: (context, url, error) =>
+                                            const Icon(Icons.error),
+                                        imageUrl: grocery.imageUrl,
+                                      )),
                                 )
                               ],
                             ),

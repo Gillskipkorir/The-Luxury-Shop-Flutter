@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:the_luxury_shop/fitness_app/material_home/adverts_screen.dart';
 
 import 'fitness_app/fintness_app_theme.dart';
 import 'navigation_home_screen.dart';
@@ -26,7 +27,7 @@ class StartState extends State<SplashScreen> {
 
   route() {
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => const NavigationHomeScreen()));
+        MaterialPageRoute(builder: (context) => const AdvertsScreen()));
   }
 
   @override
@@ -47,11 +48,9 @@ class StartState extends State<SplashScreen> {
                     end: Alignment.bottomCenter)),
           ),
           Center(
-            child: Container(
-              child: Image.asset(
-                "assets/images/ic_launcher.png",
-                fit: BoxFit.fill,
-              ),
+            child: Image.asset(
+              "assets/images/ic_launcher.png",
+              fit: BoxFit.fill,
             ),
           )
         ],

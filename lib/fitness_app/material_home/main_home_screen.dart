@@ -150,7 +150,7 @@ class _MainHomeScreenState extends State<MainHomeScreen>
             getMainListViewUI(),
             SizedBox(
               height: MediaQuery.of(context).padding.bottom,
-            )
+            ),
           ],
         ),
       ),

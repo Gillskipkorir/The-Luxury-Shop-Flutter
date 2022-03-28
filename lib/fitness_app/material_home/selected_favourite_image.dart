@@ -1,12 +1,12 @@
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
 import 'package:the_luxury_shop/fitness_app/material_app_theme.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FavouriteMaterialScreen extends StatefulWidget {
@@ -83,11 +83,14 @@ class _FavouriteMaterialScreenState extends State<FavouriteMaterialScreen>
               children: [
                 AspectRatio(
                   aspectRatio: 0.6,
-                  child: FadeInImage.memoryNetwork(
-                      fit: BoxFit.cover,
-                      fadeInDuration: const Duration(milliseconds: 70),
-                      placeholder: kTransparentImage,
-                      image: widget.imageUrl),
+                  child: CachedNetworkImage(
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) =>
+                        const CircularProgressIndicator(),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                    imageUrl: widget.imageUrl,
+                  ),
                 ),
               ],
             ),

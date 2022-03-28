@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_luxury_shop/auth/screens/login_screen.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
 
 import '../app_theme.dart';
@@ -35,11 +34,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
         index: DrawerIndex.HOME,
         labelName: 'Home',
         icon: const Icon(Icons.home),
-      ),
-      DrawerList(
-        index: DrawerIndex.Contact,
-        labelName: 'Contact Us',
-        icon: const Icon(Icons.contact_mail),
       ),
       DrawerList(
         index: DrawerIndex.About,
@@ -161,7 +155,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
             height: 1,
             color: AppTheme.grey.withOpacity(0.9),
           ),
-         /* Column(
+          /* Column(
             children: <Widget>[
               ListTile(
                 title: const Text(
@@ -291,15 +285,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
 enum DrawerIndex {
   HOME,
-  Settings,
-  FeedBack,
-  Help,
   Share,
   About,
   Store,
-  Invite,
   Contact,
-  Testing,
 }
 
 class DrawerList {

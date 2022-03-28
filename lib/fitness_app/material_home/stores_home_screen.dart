@@ -139,7 +139,7 @@ class _OurStoresScreenState extends State<OurStoresScreen>
       ),
       child: Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 156 - 50,
             child: FutureBuilder<bool>(
               future: getData(),

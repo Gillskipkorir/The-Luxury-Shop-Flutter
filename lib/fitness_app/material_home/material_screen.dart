@@ -1,8 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:the_luxury_shop/fitness_app/fintness_app_theme.dart';
 import 'package:the_luxury_shop/fitness_app/material_home/selected_material_image.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class SelectedMaterial extends StatelessWidget {
   final String materialName;
@@ -86,8 +86,7 @@ class SelectedMaterial extends StatelessWidget {
                       )
                     : Container(
                         padding: const EdgeInsets.all(4),
-                        child:
-                        GridView.builder(
+                        child: GridView.builder(
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount: snapshot.data?.docs.length,
@@ -98,27 +97,28 @@ class SelectedMaterial extends StatelessWidget {
                               return Container(
                                 margin: const EdgeInsets.all(3),
                                 child: InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              MaterialInfoScreen(
-                                                imageUrl: snapshot
-                                                    .data!.docs[index]
-                                                    .get('imageUri'),
-                                                materialname: materialName,
-                                              )),
-                                    );
-                                  },
-                                  child: FadeInImage.memoryNetwork(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MaterialInfoScreen(
+                                                  imageUrl: snapshot
+                                                      .data!.docs[index]
+                                                      .get('imageUri'),
+                                                  materialname: materialName,
+                                                )),
+                                      );
+                                    },
+                                    child: CachedNetworkImage(
                                       fit: BoxFit.cover,
-                                      fadeInDuration:
-                                          const Duration(milliseconds: 70),
-                                      placeholder: kTransparentImage,
-                                      image: snapshot.data?.docs[index]
-                                          .get('imageUri')),
-                                ),
+                                      placeholder: (context, url) =>
+                                          const CircularProgressIndicator(),
+                                      errorWidget: (context, url, error) =>
+                                          const Icon(Icons.error),
+                                      imageUrl:
+                                          '${snapshot.data?.docs[index].get('imageUri')}',
+                                    )),
                               );
                             }),
                       );
