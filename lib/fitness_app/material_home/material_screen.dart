@@ -115,7 +115,10 @@ class SelectedMaterial extends StatelessWidget {
                                       placeholder: (context, url) =>
                                           const CircularProgressIndicator(),
                                       errorWidget: (context, url, error) =>
-                                          const Icon(Icons.error),
+                                          const Icon(
+                                        Icons.error,
+                                        size: 22,
+                                      ),
                                       imageUrl:
                                           '${snapshot.data?.docs[index].get('imageUri')}',
                                     )),

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as Path;
@@ -110,7 +111,7 @@ class _AddImageState extends State<AddImage> {
   }
 
   chooseImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     setState(() {
       _image.add(File(pickedFile!.path));
     });
@@ -127,7 +128,9 @@ class _AddImageState extends State<AddImage> {
         _image.add(File(response.file!.path));
       });
     } else {
-      print(response.file);
+      if (kDebugMode) {
+        print(response.file);
+      }
     }
   }
 
